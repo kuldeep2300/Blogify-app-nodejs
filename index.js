@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"));
 // app.use(express.static(path.resolve("./public")));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // MongoDB Connection
 mongoose
