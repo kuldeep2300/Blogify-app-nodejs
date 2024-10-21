@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mt-3">
+      <form action="/blog" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="coverImageURL" class="form-label">Cover Image</label>
+          <input
+            type="file"
+            name="coverImageURL"
+            class="form-control"
+            id="coverImageURL"
+            aria-describedby="coverImageURL"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            id="title"
+            aria-describedby="title"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="body" class="form-label">Content</label>
+          <!-- <textarea class="form-control" name="body" id="body"></textarea> -->
+          <textarea
+            class="form-control"
+            name="body"
+            id="body"
+            rows="1"
+            style="resize: none"
+            oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"
+            placeholder="Type here..."
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <%- include('./partials/scripts') %>
+  </body>
+</html>
